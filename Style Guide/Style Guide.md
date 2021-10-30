@@ -1,5 +1,5 @@
 # Style Guide for RDS
-This project is based on the [google style guide](https://google.github.io/styleguide/) with some adjustments as well as some additions.
+This project is based on the [google style guide](https://google.github.io/styleguide/cppguide.html) with some adjustments as well as some additions.
 ## Changes to the Google style guide
 1) The indent width is changed from 2 to 4 spaces
 
