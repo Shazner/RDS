@@ -17,7 +17,7 @@ This project is based on the [google style guide](https://google.github.io/style
 ```cpp
 /**
  * @file foo.hpp
- * @brief The main file for the project
+ * @brief header for foo
  */
 #ifndef FOO_HPP
 #define FOO_HPP
@@ -37,6 +37,7 @@ This project is based on the [google style guide](https://google.github.io/style
  */
 ```
 ## Function
+The function comment block is only required for functions which meaning is not obvious.
 ```cpp
 /**
  * @brief computes the area of a rectangle
