@@ -41,4 +41,12 @@ void Person::activate(void) {
 void Person::deactivate(void) {
     active = false;
 }
+
+std::ostream& operator<<(std::ostream& out, const Person& person) {
+    out << "Name: " << person.first_name << " " << person.last_name
+        << std::endl;
+    out << "Agency: " << person.agency << std::endl;
+    out << "Position: " << person.position << std::endl;
+    return out;
+}
 }  // namespace RDS

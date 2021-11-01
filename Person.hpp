@@ -6,6 +6,7 @@
 #define PERSON_HPP
 
 #include <string>
+#include <ostream>
 
 namespace RDS {
 class Person {
@@ -33,6 +34,7 @@ class Person {
     void set_position(std::string new_position);
     void activate(void);
     void deactivate(void);
+    friend std::ostream& operator<<(std::ostream& out, const Person& person);
 };
 }  // namespace RDS
 #endif  // PERSON_HPP
