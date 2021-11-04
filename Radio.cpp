@@ -61,9 +61,11 @@ void Radio::edit_notes() {
     {
         std::ifstream ifile(temp_file_name);
         if (ifile.good()) {
-            std::ostringstream sstr;
-            sstr << ifile.rdbuf();
-            notes = sstr.str();
+            // Idea from
+            // https://www.tutorialspoint.com/Read-whole-ASCII-file-into-Cplusplus-std-string
+            std::ostringstream string_stream;
+            string_stream << ifile.rdbuf();
+            notes = string_stream.str();
         }
     }
     // Strip off any extra new lines at the end
