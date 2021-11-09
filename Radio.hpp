@@ -33,6 +33,7 @@ class Radio {
     void checkin();
     void activate();
     void deactivate();
+    friend std::ostream& operator<<(std::ostream& out, const Radio& radio);
 };
 }  // namespace RDS
 

@@ -91,4 +91,24 @@ void Radio::deactivate() {
     active = false;
 }
 
+std::ostream& operator<<(std::ostream& out, const RADIO_STATUS status) {
+    switch (status) {
+        case (RADIO_STATUS::CHECKED_IN):
+            out << "Checked in";
+            break;
+        case (RADIO_STATUS::CHECKED_OUT):
+            out << "Checked out";
+            break;
+    }
+    return out;
+}
+
+std::ostream& operator<<(std::ostream& out, const Radio& radio) {
+    out << "Radio ID: " << radio.radio_id << std::endl;
+    out << "Radio Type: " << radio.radio_type << std::endl;
+    out << "Radio Status : " << radio.status << std::endl;
+    out << "Notes: " << radio.notes << std::endl;
+    return out;
+}
+
 }  // namespace RDS
