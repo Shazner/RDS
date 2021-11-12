@@ -14,6 +14,9 @@ Person.o: src/Person.cpp inc/Person.hpp
 Radio.o: src/Radio.cpp inc/Radio.hpp
 	g++ $(compiler_flags) src/Radio.cpp -c $(cpp_version) $(include_dirs)
 
+Time_entry.o: src/Time_entry.cpp inc/Time_entry.hpp
+	g++ $(compiler_flags) src/Time_entry.cpp -c $(cpp_version) $(include_dirs)
+
 clean:
 	rm *.o*
 
