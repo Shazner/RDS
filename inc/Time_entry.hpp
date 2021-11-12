@@ -12,7 +12,7 @@
 
 namespace RDS {
 enum class ACTIVITY { CHECK_IN, CHECK_OUT };
-class Time_entry : public Radio, Person {
+class Time_entry : public Radio, public Person {
    private:
     time_t entry_time;
     ACTIVITY activity;
