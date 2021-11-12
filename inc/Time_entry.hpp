@@ -19,6 +19,8 @@ class Time_entry : public Radio, Person {
 
    public:
     Time_entry(Radio radio, Person person);
+    time_t get_time() const;
+    ACTIVITY get_activity() const;
 };
 }  // namespace RDS
 #endif  // TIME_ENTRY_HPP
