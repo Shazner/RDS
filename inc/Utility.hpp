@@ -8,6 +8,7 @@
 #include <vector>
 
 #include "Radio.hpp"
+#include "Person.hpp"
 
 namespace RDS {
 namespace UTILITY {
@@ -30,6 +31,7 @@ std::vector<T> find_if(const std::vector<T> items, UnaryPredicate p) {
 }
 
 [[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios);
+[[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people);
 
 }  // namespace UTILITY
 }  // namespace RDS

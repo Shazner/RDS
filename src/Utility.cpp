@@ -11,11 +11,13 @@
 
 #include "Utility.hpp"
 #include "Radio.hpp"
+#include "Person.hpp"
 
 /// Static Functions
 static int get_int();
 static void print_item_one_line(const RDS::Radio& radio);
-static RDS::Radio get_default(RDS::Radio&);
+static RDS::Radio get_default(const RDS::Radio&);
+static RDS::Person get_default(const RDS::Person&);
 
 /// Prompts
 const std::string RADIO_OPTIONS_PROMPT =
@@ -26,6 +28,7 @@ const std::string RADIO_OPTIONS_PROMPT =
 
 /// Constants
 static const RDS::Radio DEFAULT_RADIO("", "");
+static const RDS::Person DEFAULT_PERSON("", "", "", "", "");
 
 /// Template Functions
 template <typename T>
@@ -150,6 +153,11 @@ namespace UTILITY {
     }
     return make_pair(false, DEFAULT_RADIO);
 }
+
+[[nodiscard]] std::pair<bool, Person> select(
+    const std::vector<Person>& people) {
+    return std::make_pair(false, get_default(people[0]));
+}
 }  // namespace UTILITY
 }  // namespace RDS
 
@@ -171,6 +179,10 @@ static void print_item_one_line(const RDS::Radio& radio) {
     cout << "ID: " << radio.get_id() << ", Type: " << radio.get_type() << endl;
 }
 
-static RDS::Radio get_default(RDS::Radio&) {
+static RDS::Radio get_default(const RDS::Radio&) {
     return DEFAULT_RADIO;
+}
+
+static RDS::Person get_default(const RDS::Person&) {
+    return DEFAULT_PERSON;
 }
