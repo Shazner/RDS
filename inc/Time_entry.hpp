@@ -5,6 +5,7 @@
 #ifndef TIME_ENTRY_HPP
 #define TIME_ENTRY_HPP
 
+#include <iostream>
 #include <ctime>
 
 #include "Radio.hpp"
@@ -22,5 +23,7 @@ class Time_entry : public Radio, public Person {
     time_t get_time() const;
     ACTIVITY get_activity() const;
 };
+
+std::ostream& operator<<(std::ostream& out, const ACTIVITY activity);
 }  // namespace RDS
 #endif  // TIME_ENTRY_HPP

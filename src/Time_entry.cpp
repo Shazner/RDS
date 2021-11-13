@@ -23,4 +23,17 @@ time_t Time_entry::get_time() const {
 ACTIVITY Time_entry::get_activity() const {
     return activity;
 }
+
+std::ostream& operator<<(std::ostream& out, const ACTIVITY activity) {
+    switch (activity) {
+        case ACTIVITY::CHECK_IN:
+            out << "Check in";
+            break;
+        case ACTIVITY::CHECK_OUT:
+            out << "Check out";
+            break;
+    }
+    return out;
+}
+
 }  // namespace RDS
