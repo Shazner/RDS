@@ -103,6 +103,19 @@ std::ostream& operator<<(std::ostream& out, const RADIO_STATUS status) {
     return out;
 }
 
+bool Radio::operator==(const Radio second) const {
+    if (radio_id != second.radio_id) {
+        return false;
+    }
+    if (radio_type != second.radio_type) {
+        return false;
+    }
+    if (notes != second.notes) {
+        return false;
+    }
+    return true;
+}
+
 std::ostream& operator<<(std::ostream& out, const Radio& radio) {
     out << "Radio ID: " << radio.radio_id << std::endl;
     out << "Radio Type: " << radio.radio_type << std::endl;

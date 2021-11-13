@@ -35,6 +35,7 @@ class Radio {
     void checkin();
     void activate();
     void deactivate();
+    bool operator==(const Radio second) const;
     friend std::ostream& operator<<(std::ostream& out, const Radio& radio);
 };
 }  // namespace RDS
