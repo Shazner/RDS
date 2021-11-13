@@ -14,11 +14,12 @@ namespace RDS {
 class Activity_log {
    private:
     std::vector<Time_entry> entries;
+
    public:
     void add(Time_entry entry);
     void delete_last();
     void write_csv(std::string incident);
-    int get_length()const;
+    int get_length() const;
 };
 }  // namespace RDS
 
