@@ -20,7 +20,9 @@ class Radio {
 
    public:
     Radio(std::string radio_id, std::string radio_type)
-        : radio_id(radio_id), radio_type(radio_type) {}
+        : radio_id(radio_id), radio_type(radio_type) {
+        active = true;
+    }
     std::string get_id() const;
     std::string get_type() const;
     std::string get_notes() const;
