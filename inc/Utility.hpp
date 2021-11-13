@@ -1,12 +1,13 @@
 /**
- * @file Utlity.hpp
+ * @file Utility.hpp
  * @brief Contains a set of Utility functions
  */
 #ifndef UTILITY_HPP
 #define UTILITY_HPP
 
 #include <vector>
-#include <functional>
+
+#include "Radio.hpp"
 
 namespace RDS {
 namespace UTILITY {
@@ -27,6 +28,8 @@ std::vector<T> find_if(const std::vector<T> items, UnaryPredicate p) {
     }
     return output;
 }
+
+[[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios);
 
 }  // namespace UTILITY
 }  // namespace RDS
