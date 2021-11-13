@@ -15,9 +15,11 @@ Time_entry::Time_entry(Radio radio, Person person)
     }
     entry_time = time(NULL);
 }
+
 time_t Time_entry::get_time() const {
     return entry_time;
 }
+
 ACTIVITY Time_entry::get_activity() const {
     return activity;
 }
