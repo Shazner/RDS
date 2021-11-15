@@ -5,8 +5,12 @@
 
 #include <iostream>
 #include <algorithm>
+#include <climits>
+
 #include "Manage.hpp"
 #include "Utility.hpp"
+
+static void clear_cin();
 
 namespace RDS {
 enum MANAGE_MODE { ADD = 1, DELETE, EDIT, ACTIVATE, DEACTIVATE, RETURN };
@@ -86,6 +90,7 @@ void add(std::vector<Radio>& radios) {
 
     std::cout << "Adding a radio..." << std::endl;
     std::cout << "Radio ID: ";
+    clear_cin();
     std::getline(std::cin, radio_id);
     std::cout << "Radio Type: ";
     std::getline(std::cin, radio_type);
@@ -101,6 +106,7 @@ void add(std::vector<Person>& people) {
 
     std::cout << "Adding a person..." << std::endl;
     std::cout << "First Name: ";
+    clear_cin();
     std::getline(std::cin, first_name);
     std::cout << "Last Name: ";
     std::getline(std::cin, last_name);
@@ -133,6 +139,7 @@ void edit(std::vector<Radio>& radios) {
             std::cout << "Type your note now then a newline to finish the note."
                       << std::endl;
             std::string note;
+            clear_cin();
             std::getline(std::cin, note);
             index->add_note(note);
             break;
@@ -178,6 +185,7 @@ void edit(std::vector<Person>& people) {
         case POSITION: {
             std::cout << "Enter the position: ";
             std::string position;
+            clear_cin();
             std::getline(std::cin, position);
             index->set_position(position);
             break;
@@ -197,3 +205,8 @@ void Manage(std::vector<Person>& people) {
     Manage_UX(people);
 }
 }  // namespace RDS
+
+static void clear_cin() {
+    std::cin.clear();
+    std::cin.ignore(INT_MAX, '\n');
+}
