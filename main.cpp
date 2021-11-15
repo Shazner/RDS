@@ -40,8 +40,6 @@ int main() {
     std::cout << WELCOME_MESSAGE;
     std::cout << MAIN_OPTIONS_PROMPT;
 
-    radios.push_back(RDS::Radio("123A", "P25"));
-    people.push_back(RDS::Person("John", "Doe", "N/A", "DNK"));
     MAIN_OPTIONS main_option =
         static_cast<MAIN_OPTIONS>(RDS::UTILITY::get_int());
     while (main_option != QUIT) {
