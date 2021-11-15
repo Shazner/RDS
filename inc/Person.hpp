@@ -34,6 +34,7 @@ class Person {
     void set_position(std::string new_position);
     void activate(void);
     void deactivate(void);
+    bool operator==(const Person second) const;
     friend std::ostream& operator<<(std::ostream& out, const Person& person);
 };
 }  // namespace RDS

@@ -42,6 +42,22 @@ void Person::deactivate(void) {
     active = false;
 }
 
+bool Person::operator==(const Person second) const {
+    if (first_name != second.first_name) {
+        return false;
+    }
+    if (last_name != second.last_name) {
+        return false;
+    }
+    if (agency != second.agency) {
+        return false;
+    }
+    if (position != second.position) {
+        return false;
+    }
+    return true;
+}
+
 std::ostream& operator<<(std::ostream& out, const Person& person) {
     out << "Name: " << person.first_name << " " << person.last_name
         << std::endl;
