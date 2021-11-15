@@ -13,12 +13,12 @@
 static void clear_cin();
 
 namespace RDS {
-enum MANAGE_MODE { ADD = 1, DELETE, EDIT, ACTIVATE, DEACTIVATE, RETURN };
+enum MANAGE_MODE { ADD = 1, DELETE, EDIT, ACTIVATE, DEACTIVATE, LIST, RETURN };
 enum STATUS { INACTIVE = 0, ACTIVE = 1 };
 template <typename T>
 void Manage_UX(std::vector<T>& items) {
-    std::cout << "Select an action (ADD=1, DELETE=2, EDIT=3, ACTIVATE=4, "
-                 "DEACTIVATE=5 RETURN=6): ";
+    std::cout << "Select an action ((1)ADD, (2)DELETE, (3)EDIT, (4)ACTIVATE, "
+                 "(5)DEACTIVATE, (6)LIST, (7)RETURN): ";
     const MANAGE_MODE mode = static_cast<MANAGE_MODE>(UTILITY::get_int());
     switch (mode) {
         case ADD: {
@@ -39,6 +39,12 @@ void Manage_UX(std::vector<T>& items) {
         }
         case DEACTIVATE: {
             activation(items, INACTIVE);
+            return;
+        }
+        case LIST: {
+            for (const auto& item : items) {
+                UTILITY::print_item_one_line(item);
+            }
             return;
         }
         case RETURN: {
