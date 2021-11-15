@@ -30,8 +30,11 @@ std::vector<T> find_if(const std::vector<T>& items, UnaryPredicate p) {
     return output;
 }
 [[nodiscard]] int get_int();
-[[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios);
-[[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people);
+/// if all is true then both active and deactivated radios can be selected.
+[[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios,
+                                            bool all = true);
+[[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people,
+                                             bool all = true);
 
 }  // namespace UTILITY
 }  // namespace RDS

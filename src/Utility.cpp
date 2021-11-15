@@ -78,7 +78,8 @@ T select_from_matches(std::vector<T> matches) {
 
 namespace RDS {
 namespace UTILITY {
-[[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios) {
+[[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios,
+                                            bool all) {
     using namespace std;
     /// Memory Constants
     enum OPTIONS { ID = 1, TYPE, INVALID };
@@ -132,7 +133,11 @@ namespace UTILITY {
                 break;
             }
         }
-        const std::vector<Radio> matches = find_if(radios, matcher);
+        std::vector<Radio> matches = find_if(radios, matcher);
+        if (!all) {
+            matches = find_if(
+                matches, [](RDS::Radio radio) { return radio.is_active(); });
+        }
         if (auto number_of_matches = matches.size(); number_of_matches == 0) {
             cout << endl
                  << "No match found." << endl
@@ -167,8 +172,8 @@ namespace UTILITY {
     return make_pair(false, DEFAULT_RADIO);
 }
 
-[[nodiscard]] std::pair<bool, Person> select(
-    const std::vector<Person>& people) {
+[[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people,
+                                             bool all) {
     using namespace std;
     /// Memory Constants
     enum OPTIONS { FIRST_NAME = 1, LAST_NAME, AGENCY, POSITION, INVALID };
@@ -249,7 +254,11 @@ namespace UTILITY {
             }
         }
 
-        const std::vector<Person> matches = find_if(people, matcher);
+        std::vector<Person> matches = find_if(people, matcher);
+        if (!all) {
+            matches = find_if(
+                matches, [](RDS::Person person) { return person.is_active(); });
+        }
         if (auto number_of_matches = matches.size(); number_of_matches == 0) {
             cout << endl
                  << "No match found." << endl

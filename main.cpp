@@ -64,13 +64,13 @@ int main() {
 
 static void log_entry() {
     std::cout << "First let's select the radio" << std::endl;
-    const auto [status_radio, radio] = RDS::UTILITY::select(radios);
+    const auto [status_radio, radio] = RDS::UTILITY::select(radios, false);
     if (!status_radio) {
         std::cout << "Failed to find a valid radio." << std::endl;
         return;
     }
     std::cout << "Next who's radio is this?" << std::endl;
-    auto [status_person, person] = RDS::UTILITY::select(people);
+    auto [status_person, person] = RDS::UTILITY::select(people, false);
     if (!status_person) {
         std::cout << "Failed to find a valid person." << std::endl;
         return;
