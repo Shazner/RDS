@@ -120,9 +120,9 @@ static void export_csv() {
 }
 
 static void managment() {
-    enum OPTIONS { RADIOS = 1, PEOPLE, QUIT = 0 };
+    enum OPTIONS { RADIOS = 1, PEOPLE, BACK = 0 };
     std::cout << "What would you like to manage?" << std::endl;
-    std::cout << "(1) Radios, (2) People, (0/any number) QUIT" << std::endl;
+    std::cout << "(1) Radios, (2) People, (0/any number) Back" << std::endl;
     OPTIONS selction = static_cast<OPTIONS>(RDS::UTILITY::get_int());
     switch (selction) {
         case RADIOS:
@@ -131,7 +131,7 @@ static void managment() {
         case PEOPLE:
             Manage(people);
             break;
-        case QUIT:
+        case BACK:
             [[fallthrough]];
         default:
             return;
