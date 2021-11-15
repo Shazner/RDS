@@ -54,7 +54,7 @@ T select_from_matches(std::vector<T> matches) {
         total_printed++;
         if (i == 5) {
             cout << SELCTION_PROMPT;
-            const auto selection = get_int();
+            const auto selection = RDS::UTILITY::get_int();
             if (selection > 0 && selection <= 5) {
                 return matches[total_printed - i + selection - 1];
             }
@@ -68,7 +68,7 @@ T select_from_matches(std::vector<T> matches) {
              << "Were any of these it? Enter the number or 0 try your search "
                 "again\n"
              << "Selection: ";
-        const auto selection = get_int();
+        const auto selection = RDS::UTILITY::get_int();
         if (selection > 0 && selection <= i - 1) {
             return matches[total_printed - i + selection];
         }
@@ -271,8 +271,6 @@ namespace UTILITY {
     }
     return make_pair(false, DEFAULT_PERSON);
 }
-}  // namespace UTILITY
-}  // namespace RDS
 
 [[nodiscard]] int get_int() {
     using namespace std;
@@ -286,6 +284,8 @@ namespace UTILITY {
     }
     return input;
 }
+}  // namespace UTILITY
+}  // namespace RDS
 
 static void print_item_one_line(const RDS::Radio& radio) {
     using namespace std;
