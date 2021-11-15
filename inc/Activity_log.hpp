@@ -16,6 +16,7 @@ class Activity_log {
     std::vector<Time_entry> entries;
 
    public:
+    ~Activity_log();
     void add(Time_entry entry);
     void delete_last();
     void write_csv(std::string incident);
