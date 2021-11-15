@@ -14,7 +14,6 @@
 #include "Person.hpp"
 
 /// Static Functions
-static int get_int();
 static void print_item_one_line(const RDS::Radio& radio);
 static void print_item_one_line(const RDS::Person& person);
 static RDS::Radio get_default(const RDS::Radio&);
@@ -275,7 +274,7 @@ namespace UTILITY {
 }  // namespace UTILITY
 }  // namespace RDS
 
-static int get_int() {
+[[nodiscard]] int get_int() {
     using namespace std;
     int input = 0;
     cin >> input;

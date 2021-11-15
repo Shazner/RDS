@@ -29,7 +29,7 @@ std::vector<T> find_if(const std::vector<T>& items, UnaryPredicate p) {
     }
     return output;
 }
-
+[[nodiscard]] int get_int();
 [[nodiscard]] std::pair<bool, Radio> select(const std::vector<Radio>& radios);
 [[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people);
 
