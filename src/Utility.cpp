@@ -142,7 +142,13 @@ namespace UTILITY {
                 return make_pair(false, DEFAULT_RADIO);
             }
         } else if (number_of_matches == 1) {
-            return make_pair(true, matches[0]);
+            cout << "Found:" << endl;
+            print_item_one_line(matches[0]);
+            cout << "Enter 1 to confirm or 0 to go back" << endl
+                 << "Selection: ";
+            if (get_int() == 1) {
+                return make_pair(true, matches[0]);
+            }
         } else {
             const RDS::Radio radio_selected = select_from_matches(matches);
             if (!(radio_selected == DEFAULT_RADIO)) {
@@ -253,7 +259,13 @@ namespace UTILITY {
                 return make_pair(false, DEFAULT_PERSON);
             }
         } else if (number_of_matches == 1) {
-            return make_pair(true, matches[0]);
+            cout << "Found:" << endl;
+            print_item_one_line(matches[0]);
+            cout << "Enter 1 to confirm or 0 to go back" << endl
+                 << "Selection: ";
+            if (get_int() == 1) {
+                return make_pair(true, matches[0]);
+            }
         } else {
             const RDS::Person person_selected = select_from_matches(matches);
             if (!(person_selected == DEFAULT_PERSON)) {
