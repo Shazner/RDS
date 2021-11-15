@@ -34,39 +34,37 @@ void Activity_log::write_csv(std::string incident) {
     buffer[19] = '\0';
     std::string csvName = std::string(buffer) + "_" + incident + ".csv";
 
-    try {
-        std::ofstream csv(csvName);
-        if (!inFile.good()) {
-            throw ios_base::failure("Failed to open the input file");
-        }
-
-        const char separator = ',';
-
-        csv << "Time" << separator << "Activity" << separator;
-        csv << "First Name" << separator << "Last Name" << separator;
-        csv << "Agency" << separator << "Position" << separator;
-        csv << "Radio ID" << separator << "Radio Type" << separator;
-        csv << "Radio Notes"
-            << "\r\n";
-
-        for (const auto& entry : entries) {
-            auto entry_time = entry.get_time();
-            csv << std::asctime(std::gmtime(&entry_time));
-            csv.seekp(-1, std::ios_base::cur);
-            csv << separator << entry.get_activity() << separator;
-            csv << entry.get_first_name() << separator << entry.get_last_name()
-                << separator;
-            csv << entry.get_agency() << separator << entry.get_position()
-                << separator;
-            csv << entry.get_id() << separator << entry.get_type() << separator
-                << entry.get_notes() << "\r\n";
-        }
-        csv.close();
-        catch (exception& error) {
-            std::cerr << error.what() << endl;
-        }
+    std::ofstream csv(csvName);
+    if (!inFile.good()) {
+        throw ios_base::failure("Failed to open the input file");
     }
 
-    int Activity_log::get_length() const { return size(entries); }
+    const char separator = ',';
+
+    csv << "Time" << separator << "Activity" << separator;
+    csv << "First Name" << separator << "Last Name" << separator;
+    csv << "Agency" << separator << "Position" << separator;
+    csv << "Radio ID" << separator << "Radio Type" << separator;
+    csv << "Radio Notes"
+        << "\r\n";
+
+    for (const auto& entry : entries) {
+        auto entry_time = entry.get_time();
+        csv << std::asctime(std::gmtime(&entry_time));
+        csv.seekp(-1, std::ios_base::cur);
+        csv << separator << entry.get_activity() << separator;
+        csv << entry.get_first_name() << separator << entry.get_last_name()
+            << separator;
+        csv << entry.get_agency() << separator << entry.get_position()
+            << separator;
+        csv << entry.get_id() << separator << entry.get_type() << separator
+            << entry.get_notes() << "\r\n";
+    }
+    csv.close();
+}
+
+int Activity_log::get_length() const {
+    return size(entries);
+}
 
 }  // namespace RDS
