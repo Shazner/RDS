@@ -4,12 +4,17 @@
  */
 
 #include <vector>
+#include <iostream>
 #include <fstream>
 #include <sstream>
 #include <ctime>
 #include "Activity_log.hpp"
 
 namespace RDS {
+Activity_log::~Activity_log() {
+    std::cout << "Activity Log Destroyed" << std::endl;
+}
+
 void Activity_log::add(Time_entry entry) {
     entries.push_back(entry);
 }
