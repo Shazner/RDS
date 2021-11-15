@@ -35,8 +35,8 @@ void Activity_log::write_csv(std::string incident) {
     std::string csvName = std::string(buffer) + "_" + incident + ".csv";
 
     std::ofstream csv(csvName);
-    if (!inFile.good()) {
-        throw ios_base::failure("Failed to open the input file");
+    if (!csv.good()) {
+        throw std::ios_base::failure("Failed to open the input file");
     }
 
     const char separator = ',';
