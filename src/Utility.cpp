@@ -14,8 +14,6 @@
 #include "Person.hpp"
 
 /// Static Functions
-static void print_item_one_line(const RDS::Radio& radio);
-static void print_item_one_line(const RDS::Person& person);
 static RDS::Radio get_default(const RDS::Radio&);
 static RDS::Person get_default(const RDS::Person&);
 
@@ -50,7 +48,7 @@ T select_from_matches(std::vector<T> matches) {
     int i = 1;
     for (const auto& match : matches) {
         cout << i << ") ";
-        print_item_one_line(match);
+        RDS::UTILITY::print_item_one_line(match);
         total_printed++;
         if (i == 5) {
             cout << SELCTION_PROMPT;
@@ -305,20 +303,20 @@ namespace UTILITY {
     }
     return input;
 }
-}  // namespace UTILITY
-}  // namespace RDS
 
-static void print_item_one_line(const RDS::Radio& radio) {
+void print_item_one_line(const RDS::Radio& radio) {
     using namespace std;
     cout << "ID: " << radio.get_id() << ", Type: " << radio.get_type() << endl;
 }
 
-static void print_item_one_line(const RDS::Person& person) {
+void print_item_one_line(const RDS::Person& person) {
     using namespace std;
     cout << "Name: " << person.get_first_name() << " " << person.get_last_name()
          << ", Agency: " << person.get_agency()
          << ", Pos.: " << person.get_position() << endl;
 }
+}  // namespace UTILITY
+}  // namespace RDS
 
 static RDS::Radio get_default(const RDS::Radio&) {
     return DEFAULT_RADIO;

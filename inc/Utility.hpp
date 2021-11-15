@@ -35,7 +35,8 @@ std::vector<T> find_if(const std::vector<T>& items, UnaryPredicate p) {
                                             bool all = true);
 [[nodiscard]] std::pair<bool, Person> select(const std::vector<Person>& people,
                                              bool all = true);
-
+void print_item_one_line(const RDS::Radio& radio);
+void print_item_one_line(const RDS::Person& person);
 }  // namespace UTILITY
 }  // namespace RDS
 
