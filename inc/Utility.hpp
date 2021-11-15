@@ -20,9 +20,9 @@ namespace UTILITY {
  * @returns vector of InputIt
  */
 template <typename T, class UnaryPredicate>
-std::vector<T> find_if(const std::vector<T> items, UnaryPredicate p) {
+std::vector<T> find_if(const std::vector<T>& items, UnaryPredicate p) {
     std::vector<T> output;
-    for (const auto item : items) {
+    for (const auto& item : items) {
         if (p(item)) {
             output.push_back(item);
         }
