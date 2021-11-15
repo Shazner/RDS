@@ -44,8 +44,7 @@ void Activity_log::write_csv(std::string incident) {
         auto entry_time = entry.get_time();
         csv << std::asctime(std::gmtime(&entry_time));
         csv.seekp(-1, std::ios_base::cur);
-        csv << separator
-            << entry.get_activity() << separator;
+        csv << separator << entry.get_activity() << separator;
         csv << entry.get_first_name() << separator << entry.get_last_name()
             << separator;
         csv << entry.get_agency() << separator << entry.get_position()
