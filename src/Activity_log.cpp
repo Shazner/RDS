@@ -27,7 +27,7 @@ void Activity_log::write_csv(std::string incident) {
     char buffer[20];
     std::strftime(buffer, sizeof(buffer) - 1, format, &tm);
     buffer[19] = '\0';
-    std::string csvName = std::string(buffer) + incident + ".csv";
+    std::string csvName = std::string(buffer) + "_" + incident + ".csv";
 
     std::ofstream csv(csvName);
 
@@ -42,8 +42,9 @@ void Activity_log::write_csv(std::string incident) {
 
     for (const auto& entry : entries) {
         auto entry_time = entry.get_time();
-        csv << std::asctime(std::gmtime(&entry_time)) << separator
-            << entry.get_activity() << separator;
+        csv << std::asctime(std::gmtime(&entry_time));
+        csv.seekp(-1, std::ios_base::cur);
+        csv << separator << entry.get_activity() << separator;
         csv << entry.get_first_name() << separator << entry.get_last_name()
             << separator;
         csv << entry.get_agency() << separator << entry.get_position()
