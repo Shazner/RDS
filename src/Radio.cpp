@@ -29,7 +29,7 @@ bool Radio::is_active() const {
 }
 
 void Radio::add_note(std::string note) {
-    notes = note + ", " + notes;
+    notes = note + " | " + notes;
 }
 
 void Radio::clear_notes() {
