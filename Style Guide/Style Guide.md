@@ -36,6 +36,14 @@ This project is based on the [google style guide](https://google.github.io/style
  * comments that span multiple lines
  */
 ```
+## Naming
+ - Classes, File names except main will use snake case with the first letter capitalized.
+    - ex. ```Activity_log```
+ - Variables and Functions will use snake case
+    - ex. ```radio_selected```
+    - Manage functions do not follow this.
+ - Memory constants of any form will be uppercase snake case
+    - ex. ```MENU_PROMPT```
 ## Function
 The function comment block is only required for functions which meaning is not obvious.
 ```cpp
