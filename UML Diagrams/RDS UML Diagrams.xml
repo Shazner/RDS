@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-11-15T03:17:34.126Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36 Edg/95.0.1020.53" version="15.7.3" etag="eX7GH6ufRr_5zUIhRtdg" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2021-11-15T03:21:43.824Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/95.0.4638.69 Safari/537.36 Edg/95.0.1020.53" version="15.7.3" etag="V6BbGrcSqCDvtQ_njgkr" type="github" pages="3">
   <diagram id="953c4bec-fb9e-3684-0309-e26ee918f7e6" name="Case Diagram">
     <mxGraphModel dx="1038" dy="579" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" background="#ffffff" math="0" shadow="0">
       <root>
@@ -107,6 +107,9 @@
       <root>
         <mxCell id="usj5ZqUWLDcSs_8N4Zsx-0" />
         <mxCell id="usj5ZqUWLDcSs_8N4Zsx-1" parent="usj5ZqUWLDcSs_8N4Zsx-0" />
+        <mxCell id="N-YRkBM5ba4I_3orsoL6-36" value="&lt;h2&gt;&lt;span style=&quot;font-weight: 400&quot;&gt;Legend&lt;/span&gt;&lt;/h2&gt;" style="rounded=0;whiteSpace=wrap;html=1;shadow=0;glass=0;sketch=0;verticalAlign=top;" vertex="1" parent="usj5ZqUWLDcSs_8N4Zsx-1">
+          <mxGeometry x="40" y="485" width="600" height="155" as="geometry" />
+        </mxCell>
         <mxCell id="N-YRkBM5ba4I_3orsoL6-4" value="Manage(vector&lt;T&gt;&amp;)" style="swimlane;glass=0;startSize=20;fillColor=#dae8fc;strokeColor=#6c8ebf;rounded=0;shadow=0;sketch=0;" vertex="1" parent="usj5ZqUWLDcSs_8N4Zsx-1">
           <mxGeometry x="240" y="80" width="200" height="80" as="geometry">
             <mxRectangle x="325" y="70" width="100" height="20" as="alternateBounds" />
@@ -204,10 +207,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="N-YRkBM5ba4I_3orsoL6-34" value="Templates" style="swimlane;rounded=0;shadow=0;glass=0;sketch=0;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="usj5ZqUWLDcSs_8N4Zsx-1">
-          <mxGeometry x="80" y="520" width="200" height="50" as="geometry" />
+          <mxGeometry x="80" y="537.5" width="200" height="50" as="geometry" />
         </mxCell>
         <mxCell id="N-YRkBM5ba4I_3orsoL6-35" value="Overloads" style="swimlane;rounded=0;shadow=0;glass=0;sketch=0;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="usj5ZqUWLDcSs_8N4Zsx-1">
-          <mxGeometry x="400" y="520" width="200" height="50" as="geometry" />
+          <mxGeometry x="400" y="537.5" width="200" height="50" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
