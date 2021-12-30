@@ -44,15 +44,16 @@ T select_from_matches(std::vector<T> matches) {
         "Selection: ";
 
     cout << "There were multiple options so lets pick" << endl;
-    int total_printed = 0;
-    int i = 1;
+    unsigned int total_printed = 0;
+    unsigned int i = 1;
     for (const auto& match : matches) {
         cout << i << ") ";
         RDS::UTILITY::print_item_one_line(match);
         total_printed++;
         if (i == 5) {
             cout << SELCTION_PROMPT;
-            const auto selection = RDS::UTILITY::get_int();
+            const auto selection =
+                static_cast<unsigned int>(RDS::UTILITY::get_int());
             if (selection > 0 && selection <= 5) {
                 return matches[total_printed - i + selection - 1];
             }
@@ -66,7 +67,8 @@ T select_from_matches(std::vector<T> matches) {
              << "Were any of these it? Enter the number or 0 try your search "
                 "again\n"
              << "Selection: ";
-        const auto selection = RDS::UTILITY::get_int();
+        const auto selection =
+            static_cast<unsigned int>(RDS::UTILITY::get_int());
         if (selection > 0 && selection <= i - 1) {
             return matches[total_printed - i + selection];
         }
