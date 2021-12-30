@@ -8,4 +8,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 include(src/CMakeLists.txt)
 
+include(cmake/compiler_warnings.cmake)
+
 add_executable(RDS main.cpp ${SOURCES})
+
+set_project_warnings(${PROJECT_NAME})
