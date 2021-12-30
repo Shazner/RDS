@@ -1,0 +1,9 @@
+set(SOURCES
+  ${SOURCES}
+  src/Activity_log.cpp
+  src/Manage.cpp
+  src/Person.cpp
+  src/Radio.cpp
+  src/Time_entry.cpp
+  src/Utility.cpp
+)
