@@ -19,8 +19,7 @@ class Radio {
     bool active;
 
    public:
-    Radio(std::string radio_id, std::string radio_type)
-        : radio_id(radio_id), radio_type(radio_type) {
+    Radio(std::string id, std::string type) : radio_id(id), radio_type(type) {
         active = true;
     }
     std::string get_id() const;
