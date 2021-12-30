@@ -5,6 +5,7 @@
 
 #include <fstream>
 #include <sstream>
+#include <iostream>
 #include "Radio.hpp"
 
 namespace RDS {
@@ -57,7 +58,9 @@ void Radio::edit_notes() {
         std::ofstream ofile(temp_file_name);
         ofile << notes << '\n';
     }
-    system(vim_bash_script.data());
+    if (system(vim_bash_script.data())) {
+        throw std::system_error(std::error_code(), "Failed to Launch Vim");
+    }
     {
         std::ifstream ifile(temp_file_name);
         if (ifile.good()) {
@@ -72,7 +75,10 @@ void Radio::edit_notes() {
     while (notes.back() == '\n' || notes.back() == '\r') {
         notes.erase(notes.end() - 1);
     }
-    system(remove_temp_file.data());
+    if (system(remove_temp_file.data())) {
+        throw std::system_error(std::error_code(),
+                                "Failed to remove temp file");
+    }
 }
 
 void Radio::checkout() {
