@@ -28,7 +28,7 @@ void Activity_log::write_csv(std::string incident) {
     // Adapted from https://en.cppreference.com/w/c/chrono/mktime
     auto current_time = time(NULL);
     struct tm tm = *std::gmtime(&current_time);
-    char format[] = "%j_%H%M";
+    const char format[] = "%j_%H%M";
     char buffer[20];
     std::strftime(buffer, sizeof(buffer) - 1, format, &tm);
     buffer[19] = '\0';
@@ -63,7 +63,7 @@ void Activity_log::write_csv(std::string incident) {
     csv.close();
 }
 
-int Activity_log::get_length() const {
+std::vector<RDS::Time_entry>::size_type Activity_log::get_length() const {
     return size(entries);
 }
 

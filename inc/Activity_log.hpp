@@ -20,7 +20,7 @@ class Activity_log {
     void add(Time_entry entry);
     void delete_last();
     void write_csv(std::string incident);
-    int get_length() const;
+    std::vector<RDS::Time_entry>::size_type get_length() const;
 };
 }  // namespace RDS
 
