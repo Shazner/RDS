@@ -18,13 +18,13 @@ class Person {
     bool active;
 
    public:
-    Person(std::string first_name, std::string last_name, std::string agency,
-           std::string position, bool active = true)
-        : first_name(first_name),
-          last_name(last_name),
-          agency(agency),
-          position(position),
-          active(active) {}
+    Person(std::string f_name, std::string l_name, std::string a_agency,
+           std::string a_position, bool a_active = true)
+        : first_name(f_name),
+          last_name(l_name),
+          agency(a_agency),
+          position(a_position),
+          active(a_active) {}
     std::string get_first_name(void) const;
     std::string get_last_name(void) const;
     std::string get_agency(void) const;

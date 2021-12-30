@@ -245,7 +245,7 @@ namespace UTILITY {
                 break;
             }
             case INVALID: {
-                matcher = []([[maybe_unused]] RDS::Person people) {
+                matcher = []([[maybe_unused]] RDS::Person person) {
                     return false;
                 };
                 break;
